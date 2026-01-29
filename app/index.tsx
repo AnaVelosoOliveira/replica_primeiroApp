@@ -1,20 +1,27 @@
 
+import { Header } from "@/components/header";
+import { router } from "expo-router";
 import { Image, StyleSheet, ScrollView, Text, View, TouchableOpacity } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function HomePage(){
+    const visit = () => {
+        router.push('/list')
+        
+    }
     return (
         <SafeAreaView style={s.wrap}>
+            <Header image={require('@/assets/images/nike 1.webp')}/>
             <ScrollView contentContainerStyle={{flexGrow: 1}}>
                 <View style={s.body}>
                     <Text style={s.title}>Tela Inicial</Text>
-                    <Text style={s.paragraph}>Meu primeiro APP usando react-native e expo</Text>
+                    <Text style={s.paragraph}>Tênis da Nike</Text>
                 </View>
                 <View style={s.body2}>
-                    <Image source={require("../assets/images/react-logo.png")}/>
+                    <Image source={require("../assets/images/nike 4.jpg")}/>
                 </View>
                 <View style={s.body2}>
-                    <TouchableOpacity style={s.btn}>
+                    <TouchableOpacity style={s.btn} onPress={visit}>
                         <Text style={s.btnText}>Ir para lista</Text>
 
                     </TouchableOpacity>
@@ -32,7 +39,9 @@ const s = StyleSheet.create({
         gap: 25
     },
     body2:{
-        alignItems:'center'
+        alignItems:'center',
+        paddingTop: 20,
+    
     },
     title:{
         color:'#ffffff',
@@ -69,6 +78,9 @@ const s = StyleSheet.create({
     btnText:{
         color:'#ffffff',
         fontSize: 22
-    }
+    },
+    
+
+
 
 })
