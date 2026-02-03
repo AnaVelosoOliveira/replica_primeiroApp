@@ -69,13 +69,7 @@ const data = [
         "imagem": require('@/assets/images/decimo.avif'),
         "valor": "R$ 313,49 "
     },
-    {
 
-
-
-
-
-    },
 
 ]
 
